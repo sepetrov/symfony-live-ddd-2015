@@ -19,5 +19,6 @@ class RefundForCreditHandler
         /* @var ProductReturn $return */
         $return = $this->returns->find($command->returnNumber());
         $return->refundForCredit();
+        $this->returns->update($return);
     }
 }

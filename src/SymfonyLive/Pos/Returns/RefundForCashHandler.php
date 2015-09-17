@@ -19,5 +19,6 @@ class RefundForCashHandler
         /* @var ProductReturn $return */
         $return = $this->returns->find($command->returnNumber());
         $return->refundForCash();
+        $this->returns->update($return);
     }
 }
